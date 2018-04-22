@@ -1,22 +1,18 @@
-// Package randomstring generates a random string consisting with the length you specify.
-package randomstring
+package basit1
 
 import (
-	"math/rand"
-	"time"
-
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 )
 
 // Constants used by the code to represent the input and outputs of the JSON structure
 const (
-	length = "length"
+	age = "age"
 	result = "result"
 )
 
 // log is the default package logger
-var log = logger.GetLogger("activity-randomstring")
+var log = logger.GetLogger("activity-myactivity")
 
 // MyActivity is a stub for your Activity implementation
 type MyActivity struct {
@@ -37,25 +33,11 @@ func (a *MyActivity) Metadata() *activity.Metadata {
 func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 
 	// Get the inputs
-	stringLength := context.GetInput(length).(int)
-
-	// Set a random seed
-	rand.Seed(time.Now().UTC().UnixNano())
-
-	// Create a random string
-	bytes := make([]byte, stringLength)
-	for i := 0; i < stringLength; i++ {
-		bytes[i] = byte(randInt(65, 90))
-	}
-
-	log.Debugf("Created a random string [%s]", string(bytes))
+	//intAge := context.GetInput(age).(int)
 
 	// Set the output value in the context
-	context.SetOutput(result, string(bytes))
+	context.SetOutput(result, "Still young!!")
 
 	return true, nil
 }
 
-func randInt(min int, max int) int {
-	return min + rand.Intn(max-min)
-}
