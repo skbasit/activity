@@ -1,15 +1,15 @@
 {
-  "name": "myactivity",
+  "name": "randomstring",
   "type": "flogo:activity",
-  "ref": "github.com/skbasit/activity",
+  "ref": "github.com/retgits/flogo-components/activity/randomstring",
   "version": "0.0.1",
-  "title": "Age-Activity",
-  "description": "Greets you depending on your age",
-  "author": "skbasit",
-  "homepage": "https://github.com/skbasit/activity",
+  "title": "Random String",
+  "description": "Creates a random string consisting with the length you specify",
+  "author": "retgits",
+  "homepage": "https://github.com/retgits/flogo-components/tree/master/activity/randomstring",
   "inputs":[
     {
-      "name": "age",
+      "name": "length",
       "type": "integer"
     }
   ],

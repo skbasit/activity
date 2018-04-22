@@ -1,4 +1,4 @@
-package basit1
+package randomstring
 
 import (
 	"fmt"
@@ -49,10 +49,10 @@ func TestEval(t *testing.T) {
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
-	tc.SetInput("age", 10)
+	tc.SetInput("length", 10)
 	act.Eval(tc)
 
 	//check result attr
 	result := tc.GetOutput("result")
-	fmt.Printf("Got result [%s]", result)
+	fmt.Printf("Created a random string [%s]", result)
 }
