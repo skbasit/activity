@@ -1,13 +1,18 @@
-package helloworld
+package basit
 
 import (
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 )
 
-// THIS IS ADDED
-// log is the default package logger which we'll use to log
-var log = logger.GetLogger("activity-helloworld")
+// Constants used by the code to represent the input and outputs of the JSON structure
+const (
+	age = "age"
+	result = "result"
+)
+
+// log is the default package logger
+var log = logger.GetLogger("activity-myactivity")
 
 // MyActivity is a stub for your Activity implementation
 type MyActivity struct {
@@ -24,19 +29,15 @@ func (a *MyActivity) Metadata() *activity.Metadata {
 	return a.metadata
 }
 
-//Eval implements activity.Activity.Eval
-// THIS HAS CHANGED
+// Eval implements activity.Activity.Eval
 func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
-	// Get the activity data from the context
-	name := context.GetInput("name").(string)
-	salutation := context.GetInput("salutation").(string)
 
-	// Use the log object to log the greeting
-	log.Debugf("The Flogo engine says [%s] to [%s]", salutation, name)
+	// Get the inputs
+	//intAge := context.GetInput(age).(int)
 
-	// Set the result as part of the context
-	context.SetOutput("result", "The Flogo engine says "+salutation+" to "+name)
+	// Set the output value in the context
+	context.SetOutput(result, "Still young!!")
 
-	// Signal to the Flogo engine that the activity is completed
 	return true, nil
 }
+

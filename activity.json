@@ -1,17 +1,16 @@
 {
-  "name": "HelloWorld",
-  "version": "0.0.1",
+  "name": "randomstring",
   "type": "flogo:activity",
-  "description": "activity description",
-  "author": "Your Name <you.name@example.org>",
+  "ref": "github.com/skbasit/activity/myactivity",
+  "version": "0.0.1",
+  "title": "AgeActivity",
+  "description": "Greets you depending on your age",
+  "author": "skbasit",
+  "homepage": "https://github.com/skbasit/activity/myactivity",
   "inputs":[
     {
-      "name": "salutation",
-      "type": "string"
-    },
-    {
-      "name": "name",
-      "type": "string"
+      "name": "age",
+      "type": "integer"
     }
   ],
   "outputs": [

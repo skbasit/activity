@@ -1,12 +1,12 @@
-package helloworld
+package basit
 
 import (
+	"fmt"
 	"io/ioutil"
 	"testing"
 
 	"github.com/TIBCOSoftware/flogo-contrib/action/flow/test"
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
-	"github.com/stretchr/testify/assert"
 )
 
 var activityMetadata *activity.Metadata
@@ -48,14 +48,11 @@ func TestEval(t *testing.T) {
 	act := NewActivity(getActivityMetadata())
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
-	//THIS IS MODIFIED
 	//setup attrs
-	tc.SetInput("name", "Leon")
-	tc.SetInput("salutation", "Hello")
+	tc.SetInput("age", 10)
 	act.Eval(tc)
 
-	//THIS IS MODIFIED
 	//check result attr
 	result := tc.GetOutput("result")
-	assert.Equal(t, result, "The Flogo engine says Hello to Leon")
+	fmt.Printf("Got result [%s]", result)
 }
