@@ -1,4 +1,4 @@
-package basit
+package basit1
 
 import (
 	"fmt"
