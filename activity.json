@@ -1,12 +1,12 @@
 {
   "name": "myactivity",
   "type": "flogo:activity",
-  "ref": "github.com/skbasit/activity",
+  "ref": "github.com/skbasit/activity/tree/branch1",
   "version": "0.0.1",
   "title": "Age-Activity",
   "description": "Greets you depending on your age",
   "author": "skbasit",
-  "homepage": "https://github.com/skbasit/activity",
+  "homepage": "https://github.com/skbasit/activity/tree/branch1",
   "inputs":[
     {
       "name": "age",
